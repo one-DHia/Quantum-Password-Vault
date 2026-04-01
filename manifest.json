@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Quantum Vault",
+  "version": "1.0",
+  "description": "Générateur de mots de passe incassables par hasard quantique.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Ouvrir Quantum Vault"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.netlify.app/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
